@@ -1,0 +1,16 @@
+upx *.EXE
+DEL *.DCU
+DEL *.~*
+DEL *.OBJ
+DEL *.LOG
+DEL *.DSK
+DEL *.DOF
+DEL *.DPL
+DEL *.DCP
+DEL *.CFG
+DEL *.TDS
+DEL *.DPL
+DEL *.MAP
+DEL ..\*.MAP
+DEL *.DDP
+DEL *.BAK
