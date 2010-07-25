@@ -18,9 +18,9 @@ type
         function GetDnsIpFromReg : string;
         function GetDnsIpFromIpCfgOut (const Output : TStringList;var DnsIp : string) : boolean;
     protected
-        { Protected declarations }
+
     public
-        { Public declarations }
+
     published
     	function GetDnsIp : string;	
     end;
