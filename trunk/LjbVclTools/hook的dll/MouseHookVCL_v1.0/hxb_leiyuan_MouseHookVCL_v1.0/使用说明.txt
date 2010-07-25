@@ -1,0 +1,62 @@
+Hook（钩子）并不是一项很难的技术，但对于初学者来说还是一个
+不小的门槛。为此，我将鼠标Hook做成了一个可视化的控件，通过
+简单的设置几个属性，就可以截获或跟踪其它应用程序的鼠标动作。
+
+*********************************************************
+控件介绍：
+【属性】
+1.Blocked: Boolean;
+确定是截获还是跟踪鼠标动作，True对应截获，False对应跟踪。默认值为False
+2.HookedExeName: string;
+指定被Hook的应用程序名称。为空时对所有的应用程序起作用。默认值为空
+3.Active: Boolean;
+是否处于Hook状态，只读。
+4.DllName: string;
+Mouse钩子的dll名称，默认为MouseHook.dll，只读。
+5.DLLLoaded: Boolean;
+MouseHook.dll是否被加载，只读。
+
+
+
+【方法】
+1.function Start: Boolean;
+开始Hook
+2.procedure Stop;
+停止Hook
+
+【事件】
+        WM_LBUTTONDBLCLK,   WM_LBUTTONDOWN,   WM_LBUTTONUP,
+        WM_RBUTTONDBLCLK,   WM_RBUTTONDOWN,   WM_RBUTTONUP,
+        WM_MBUTTONDBLCLK,   WM_MBUTTONDOWN,   WM_MBUTTONUP,
+        WM_NCLBUTTONDBLCLK, WM_NCLBUTTONDOWN, WM_NCLBUTTONUP,
+        WM_NCRBUTTONDBLCLK, WM_NCRBUTTONDOWN, WM_NCRBUTTONUP,
+        WM_NCMBUTTONDBLCLK, WM_NCMBUTTONDOWN, WM_NCMBUTTONUP,
+        WM_MOUSEMOVE,       WM_MOUSEWHEEL,    WM_NCMOUSEMOVE,
+        WM_MOUSEACTIVATE,   WM_NCHITTEST,     WM_CAPTURECHANGED
+我处理了如上的鼠标事件，注意其中有几个事件我在测试时发现无法Hook，
+它们为WM_MBUTTONDBLCLK，WM_NCMBUTTONDBLCLK，WM_MOUSEACTIVATE,  
+ WM_NCHITTEST,     WM_CAPTURECHANGED
+
+建议：不要将HookedExeName:=''; 和 Blocked:=True; 同时设置
+********************************************************
+
+
+【使用说明】
+1.首先安装“鼠标Hook控件”目录下的控件
+2.必须将mousehook.dll拷贝到你开发的应用程序目录下，或系统目录下
+  如system32
+
+【多说几句】
+1.我提供了一个名为test.exe的demo，该例子是对notepad.exe进行Hook
+的，因此，使用前先启动notepad.exe，再点击界面上的“开始”，否则会
+提示“找不到指定的进程”！
+2.你可以参考我的控件设计模式来设计自己的Hook控件，如键盘Hook。
+3.本来想写一个组件包的，其中包括各种Hook控件，以及读写端口的控件，
+以方便初学者的使用，可是要些论文，以后再说吧。
+
+                                    黄晓斌
+                           hxb_leiyuan2000@163.net
+                                 QQ:478522325
+  
+
+

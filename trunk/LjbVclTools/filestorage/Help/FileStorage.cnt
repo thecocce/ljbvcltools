@@ -1,0 +1,40 @@
+:BASE FileStorage.hlp
+1 FileStorage component
+2 TFileStorage - Overview=TFileStorage@FileStorage.hlp
+2 Properties
+3 AutoExtract
+4 AutoExtract=AutoExtract@FileStorage.hlp
+4 Enabled=Enabled@FileStorage.hlp
+4 ExtractTo
+5 ExtractTo=ExtractTo@FileStorage.hlp
+5 CreatePath=CreatePath@FileStorage.hlp
+5 SubDirectory=SubDirectory@FileStorage.hlp
+5 TopLevelDir=TopLevelDir@FileStorage.hlp
+3 Overwrite=Overwrite@FileStorage.hlp
+4 RemoveOnTerminate=RemoveOnTerminate@FileStorage.hlp
+2 Count=Count@FileStorage.hlp
+3 DataSize=DataSize@FileStorage.hlp
+3 Files=Files@FileStorage.hlp
+2 Methods
+3 Extract=Extract@FileStorage.hlp
+2 Events
+3 OnExtract=OnExtract@FileStorage.hlp
+3 OnExtracted=OnExtracted@FileStorage.hlp
+1 FileStorage designer=FileStoragedesigner@FileStorage.hlp
+2 Playing .WAVs (example)=Playing.WAVs@FileStorage.hlp
+1 WavPlayer component
+2 TWavPlayer - Overview=TWavPlayer@FileStorage.hlp
+2 Properties
+3 Asynchroneous=Asynchroneous@FileStorage.hlp
+3 Looped=Looped@FileStorage.hlp
+3 SoundType=SoundType@FileStorage.hlp
+3 WaveSound=WaveSound@FileStorage.hlp
+2 Methods
+3 Play=Play@FileStorage.hlp
+3 Stop=Stop@FileStorage.hlp
+2 Events
+3 OnAfterPlay=OnAfterPlay@FileStorage.hlp
+3 OnBeforePlay=OnBeforePlay@FileStorage.hlp
+1 Installation Instructions=InstallationInstructions@FileStorage.hlp
+1 License Agreement=LicenseAgreement@FileStorage.hlp
+1 Registration Information=RegistrationInformation@FileStorage.hlp
