@@ -1,0 +1,5 @@
+BIG5ToGB RCDATA BIG5ToGB.txt
+GBToBIG5 RCDATA GBToBIG5.txt
+GBKSpell RCDATA GBKSpell.txt
+GBKTradition RCDATA GBKTradition.txt
+GBKSimple RCDATA GBKSimple.txt
