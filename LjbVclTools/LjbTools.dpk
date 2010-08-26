@@ -66,6 +66,7 @@ contains
   LjbFileSystemWatcher in 'LjbFileSystemWatcher.pas',
   KeyboardHook in 'KeyboardHook.pas',
   MouseHook in 'MouseHook.pas',
-  LjbGetDnsIP in 'LjbGetDnsIP.pas';
+  LjbGetDnsIP in 'LjbGetDnsIP.pas',
+  LjbHddInfo in 'LjbHddInfo.pas';
 
 end.
