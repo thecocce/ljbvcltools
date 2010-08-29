@@ -8,7 +8,6 @@ uses
 type
     TLjbFun =class(TComponent)
   private
-
     { Private declarations }
   protected
     { Protected declarations }
@@ -18,10 +17,16 @@ type
   	//将要传给JS的字符转义	
     function EncodeJsStr(jsstr:WideString):WideString;
     //检测某个端口是否被占用
-    function PortOccupied(const APort: Integer): Boolean;    
+    function PortOccupied(const APort: Integer): Boolean;
+    //根据窗口标题查找相应窗口并返回句柄
+    function FindHwnd(title:string): hwnd;
   end;
 
 procedure Register;
+var
+    win_title:string;
+    RHWND:HWND;
+    function EnumWindowsProc(Wnd: HWND; Param: Integer): Boolean; stdcall;
 
 implementation
 
@@ -77,6 +82,45 @@ begin
             WSACleanup();
         end;
     end;
+end;
+
+//--------------------------------------------------------------根据窗口标题查找相应窗口并返回句柄
+//title:窗口标题(可模糊匹配一部份)
+function TLjbFun.FindHwnd(title:string): hwnd;
+begin
+    win_title:=title;
+    RHWND:=0;
+    EnumWindows(@EnumWindowsProc, 0);
+    Result:=RHWND;
+end;
+
+//些函数为FindHwnd的权举子函数
+function EnumWindowsProc(Wnd: HWND; Param: Integer): Boolean; stdcall;
+var
+cn : Array[0..255] of char;
+tab : HWND;
+tId : DWORD;
+title_tmp:pchar;
+begin
+    Result := TRUE;
+    GetWindowText(Wnd,cn,SizeOf(cn));
+    title_tmp:=cn;
+    if ((pos(win_title,title_tmp)>0) and (RHWND=0)) then
+    begin
+        RHWND:=Wnd;
+    end;
+    {if GetClassName(wnd, cn, 255) > 0 then
+        if cn = '#32770' then
+        begin
+            if (FindWindowEx(wnd, 0, 'Button','新建窗口') <> 0) and
+            (FindWindowEx(wnd, 0, 'Button','拨打电话') <> 0) and
+            (FindWindowEx(wnd, 0, 'Button','发送(Enter)') <> 0) then
+            begin
+                tID := GetWindowThreadProcessID(wnd, nil);
+                //Form1.Memo1.Lines.Add('对话框句柄：'+IntToStr(Wnd));
+                //Form1.Memo1.Lines.Add('对话框线程ID：' + IntToSTr(tID));
+            end;
+        end; }
 end;
 
 end.
