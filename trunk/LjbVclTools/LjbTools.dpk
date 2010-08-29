@@ -67,6 +67,7 @@ contains
   KeyboardHook in 'KeyboardHook.pas',
   MouseHook in 'MouseHook.pas',
   LjbGetDnsIP in 'LjbGetDnsIP.pas',
-  LjbHddInfo in 'LjbHddInfo.pas';
+  LjbHddInfo in 'LjbHddInfo.pas',
+  LjbFun in 'LjbFun.pas';
 
 end.
